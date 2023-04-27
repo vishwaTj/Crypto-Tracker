@@ -1,0 +1,54 @@
+import { Container, Typography } from '@mui/material';
+import React from 'react';
+
+const Banner = () => {
+
+    const banner={
+        backgroundImage: "url(./banner2.jpg)",
+        height:"400px"
+    }
+    const bannerContent={
+        height: 400,
+        display: "flex",
+        flexDirection: "column",
+        paddingTop: "25px",
+        justifyContent: "space-around"
+    }
+    const Tagline={
+         display:"flex",
+         height:"40%",
+         flexDirection:"column",
+         justifyContent:"center",
+         textAlign:"center"
+    }
+  return (
+    <div style={banner}>
+        <Container className={bannerContent}>
+        <div className={Tagline}>
+           <Typography
+             variant="h2"
+             style={{
+                fontWeight: "bold",
+                marginBottom: 15,
+                fontFamily: "monospace"
+             }}
+           >
+            Crypto Tracker
+           </Typography>
+           <Typography
+              variant="subtitle2"
+              style={{
+               fontWeight: "darkgrey",
+               marginBottom: 15,
+               fontFamily: "monospace"
+            }}
+           >
+            Get All the Info Regarding your favourite Crypto Currency
+           </Typography>
+        </div>
+        </Container>
+    </div>
+  )
+}
+
+export default Banner;

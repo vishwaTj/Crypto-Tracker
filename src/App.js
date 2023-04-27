@@ -13,7 +13,7 @@ function App() {
      <div className="MainPage">
         <Header />
         <Routes>
-            <Route exact path='/' element={<Home />}> </Route>
+            <Route exact path='/' element={<Home />} />
             <Route exact path='/coins/:id' element={<CoinPage />}/>        
         </Routes>  
       </div>
@@ -21,4 +21,4 @@ function App() {
   )
 }
 
-export default App
+export default App;

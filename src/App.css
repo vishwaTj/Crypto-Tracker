@@ -18,3 +18,19 @@ a{
     color: white;
     min-height: 100vh;
 }
+
+
+
+ /* styles for the banner component */
+
+.banner{
+    background-image: "url(./banner2.jpg)";
+}
+
+.bannerContent{
+    height: 400;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25;
+    justify-content: space-around;
+}
