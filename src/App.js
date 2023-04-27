@@ -4,6 +4,7 @@ import { BrowserRouter,Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import CoinPage from './Pages/CoinPage';
 import Home from './Pages/Home';
+import 'react-alice-carousel/lib/alice-carousel.css';
 
 function App() {
   

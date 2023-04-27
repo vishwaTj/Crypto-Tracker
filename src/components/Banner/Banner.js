@@ -1,5 +1,6 @@
 import { Container, Typography } from '@mui/material';
 import React from 'react';
+import Carousel from './Carousel';
 
 const Banner = () => {
 
@@ -23,8 +24,8 @@ const Banner = () => {
     }
   return (
     <div style={banner}>
-        <Container className={bannerContent}>
-        <div className={Tagline}>
+        <Container style={bannerContent}>
+        <div style={Tagline}>
            <Typography
              variant="h2"
              style={{
@@ -46,6 +47,7 @@ const Banner = () => {
             Get All the Info Regarding your favourite Crypto Currency
            </Typography>
         </div>
+        <Carousel />
         </Container>
     </div>
   )
