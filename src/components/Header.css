@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&family=Montserrat:wght@300;400;800&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+.headerSect{
+    flex: 1;
+    color: gold;
+    /* // there is a font family here */
+    font-weight: bold;
+    cursor: pointer;
+
+}

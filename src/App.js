@@ -1,8 +1,23 @@
-import React from 'react'
+import React from 'react';
+import "./App.css";
+import { BrowserRouter,Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import CoinPage from './Pages/CoinPage';
+import Home from './Pages/Home';
 
 function App() {
+  
+
   return (
-    <div>App</div>
+    <BrowserRouter>
+     <div className="MainPage">
+        <Header />
+        <Routes>
+            <Route exact path='/' element={<Home />}> </Route>
+            <Route exact path='/coins/:id' element={<CoinPage />}/>        
+        </Routes>  
+      </div>
+    </BrowserRouter>
   )
 }
 
