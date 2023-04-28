@@ -36,8 +36,6 @@ const Carousel = () => {
        setTrending(data);
    };
 
-   console.log(Trending);
-
    useEffect(()=>{
      FetchTrendingCoins();
    },[currency]);
@@ -47,8 +45,6 @@ const Carousel = () => {
     // add loss also
    let profit = coin.price_change_percentage_24h >=0;
 
-
-    console.log(coin);
     return (
         <Link
            style={carouselItem}
@@ -102,7 +98,6 @@ const Carousel = () => {
             autoPlay
             items={items}
         />
-        Carousel
     </div>
   )
 }

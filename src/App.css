@@ -34,3 +34,27 @@ a{
     padding-top: 25;
     justify-content: space-around;
 }
+
+
+/* table row element styling */
+
+.RowElement{
+    cursor: pointer;
+    font-family:"Montserrat";
+}
+
+.RowElement:hover{
+ background-color: #131111;
+}
+
+.Table{
+    color: aliceblue;
+}
+
+.Pagination{
+    padding:20;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    color: gold;
+}
