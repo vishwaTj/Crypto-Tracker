@@ -58,3 +58,107 @@ a{
     justify-content:center;
     color: gold;
 }
+
+ /* CoinPage styling */
+
+.CoinContianer{
+    display: flex;
+    margin: 10px;
+}
+
+@media only screen and (max-width:768px) {
+    .CoinContianer {
+        flex-direction:column;
+        align-items: center;
+    }
+ }
+
+.sideBar{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25;
+    border-right: 2px solid grey;
+}
+
+@media only screen and (max-width:768px) {
+    .sideBar {
+        width:100%
+    }
+ }
+
+ .coinHeading{
+    font-weight: bold;
+    margin-bottom: 20;
+    font-family: "Montserrat";
+ }
+
+
+.coinDescription{
+    width: 100%;
+    font-family: "Montserrat";
+    padding: 25;
+    padding-bottom: 15;
+    padding-top: 0;
+    text-align: justify;
+}
+
+.CoinData{
+    align-self: start;
+    padding: 25;
+    padding-top: 10;
+    width: 100%;
+}
+
+@media only screen and (max-width:768px) {
+    .CoinData {
+        display: flex;
+        justify-content: space-around;
+    }
+ }
+
+ @media only screen and (max-width:576px) {
+    .CoinData {
+        flex-direction: column;
+        align-items: center;
+    }
+ }
+
+ @media only screen and (min-width:576px) {
+    .CoinData {
+        align-items: start;
+    }
+ }
+
+ /* Graph section of coin page */
+
+ .GraphContainer{
+    width:75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25;
+    padding: 40;
+ }
+
+ @media only screen and (max-width:768px) {
+    .GraphContainer {
+        width: 100%;
+        margin-top: 0;
+        padding: 20;
+        padding-top: 0;
+    }
+ }
+
+ /* .SelectButton{
+    border: 1px solid black;
+    border-radius: 5;
+    padding: 10;
+    padding-left: 20;
+    padding-right: 20;
+    font-family: "Montserrat";
+    cursor: pointer;
+    background-color: sele`;
+ } */

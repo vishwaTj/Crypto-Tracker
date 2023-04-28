@@ -25,6 +25,7 @@ const CoinsTable = () => {
 
    useEffect(()=>{
     fetchCoins();
+   // eslint-disable-next-line react-hooks/exhaustive-deps
    },[currency]);
 
    //Make it into a custom hook
