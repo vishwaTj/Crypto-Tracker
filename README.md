@@ -33,8 +33,9 @@ iii) Redux part
             b) Slice
                  1) usersSlice
             c) thunk
-                 1) addUUser
+                 1) addUser
                  2) fetchUser
                  3) removeUser
 
 iv) db.json --> the actual API strucuture file
+
