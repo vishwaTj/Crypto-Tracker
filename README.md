@@ -1,22 +1,22 @@
-                                            Friends Media Album
+                                            Crupto Tracker Application
 
 
 
 
-https://user-images.githubusercontent.com/109414918/235289604-ef2cb34b-7d10-41bd-b3ef-0daad53ddcd6.mp4
 
 
 
 
-             This is amedia album log for all your friends to store thier images in an album system
+             This is a live Crypto Tracker Application which give info on crypto currencies in different currencies
 
-      This project was set up with the help of React --- JSON server(Manually created) --- Redux. Here the server is started
-      up and the app is run. It fetches the data of existing friends from the JSON server. Wecan click and add new friends
-      also add images for them.
+      This project was set up with the help of React and data was pulled from a live api which gives values of all crypto coins
 
-Two techniques used to interact with Redux store
-           i) Redux Thunk -- for adding friends
-           ii) Redux Toolkit Query --> for adding albums and images
+Unique Technique used  --> A graph plot was implemented for all coins helps users to understand the coins performance before investing
+The graph can be varied between 24-hour,monthly and yealry format.
+
+React Chart was used to plot the live graaph
+
+Matrial UI was used to set up different components in the application
 
 
 file structure in src is divided into following parts
