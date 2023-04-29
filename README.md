@@ -21,28 +21,17 @@ Matrial UI was used to set up different components in the application
 
 file structure in src is divided into following parts
 i) components --> contains all thefunctional itemslike
-                            a) button
-                            b) expandable menu
-                            c) AlbumList
-                            d) AlbumList Item
-                            e) Panel
-                            f) PhotoList
-                            g) PhotoListItem
-                            h) Skeleton
-                            i) UserList
-                            j) UserListItem
-ii) hooks --> just one for thunk
-                            a) use-Thunk
-iii) Redux part 
-            a) API --> api for albums and photos
-                 1) AlbumAPI
-                 2) PhotoAPI
-            b) Slice
-                 1) usersSlice
-            c) thunk
-                 1) addUser
-                 2) fetchUser
-                 3) removeUser
+                            a) Banner --> heading
+                            b) CoinInfo
+                            c) Coin Tables <br/>
+                            d) Header.css
+                            e) Heder.js
+                            f) SelectButton
+ii) config --> a file wich stores all the API calls needed and also data
+                            
+iii) Pages
+            a) CoinPage --> Page for coin info and graph
+              
+            b) Home --> Home page
 
-iv) db.json --> the actual API strucuture file
 
