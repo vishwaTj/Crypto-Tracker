@@ -1,4 +1,11 @@
-                                          Friends Media Album
+                                            Friends Media Album
+
+
+
+
+https://user-images.githubusercontent.com/109414918/235289604-ef2cb34b-7d10-41bd-b3ef-0daad53ddcd6.mp4
+
+
 
 
              This is amedia album log for all your friends to store thier images in an album system
