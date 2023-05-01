@@ -3,6 +3,7 @@ import { AppBar, Container, MenuItem, Select, ThemeProvider, Toolbar, Typography
 import './Header.css';
 import { useNavigate } from "react-router-dom";
 import { CryptoState } from '../CryptoContext';
+import AuthModal from './Authentication/AuthModal';
 
 const Header = () => {
 
@@ -44,6 +45,7 @@ const Header = () => {
                         <MenuItem value={"USD"}>USD</MenuItem>
                         <MenuItem value={"INR"}>INR</MenuItem>                  
                     </Select>
+                    <AuthModal />
                 </Toolbar>
             </Container>
         </AppBar>
