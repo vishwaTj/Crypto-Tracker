@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+                                            Crypto Tracker Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+https://user-images.githubusercontent.com/109414918/235296648-fb2f7665-ec74-4d4b-9fa8-d3385152eecd.mp4
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm install @mui/material @emotion/react @emotion/styled`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+             This is a live Crypto Tracker Application which give info on crypto currencies in different currencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+      This project was set up with the help of React and data was pulled from a live api which gives values of all crypto coins
 
-### `npm i react-router-dom`
+Unique Technique used  --> A graph plot was implemented for all coins helps users to understand the coins performance before investing
+The graph can be varied between 24-hour,monthly and yealry format. <br/><br/>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+React Chart was used to plot the live graph <br/><br/>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Matrial UI was used to set up different components in the application <br/><br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+file structure in src is divided into following parts <br/>
+i) components --> contains all thefunctional itemslike <br/>
+                            a) Banner --> heading <br/>
+                            b) CoinInfo <br/>
+                            c) Coin Tables <br/>
+                            d) Header.css <br/>
+                            e) Heder.js <br/>
+                            f) SelectButton <br/>
+ii) config --> a file wich stores all the API calls needed and also data <br/>
+                            
+iii) Pages <br/>
+            a) CoinPage --> Page for coin info and graph <br/>
+              
+            b) Home --> Home page <br/>
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
