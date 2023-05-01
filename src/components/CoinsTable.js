@@ -1,17 +1,27 @@
 import React, { useEffect, useState } from 'react'
+import { CoinList } from '../config/API';
+import axios from 'axios';
 import { CryptoState } from '../CryptoContext';
 import { Container, LinearProgress,Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography, createTheme } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { numberWithCommas } from './Banner/Carousel';
 
 const CoinsTable = () => {
+   const [coins, setCoins] = useState([]);
+   const [loading, setLoading] = useState(false);
    const [search, setSearch] = useState("");
    const [page,setPage] = useState(1);
    const navigate = useNavigate();
 
-   const {currency,symbol, coins, loading, fetchCoins}= CryptoState();
+   const {currency,symbol}= CryptoState();
 
-   
+   const fetchCoins = async () => {
+       setLoading(true);
+       const {data} = await axios.get(CoinList(currency));
+       // this is a bad technique follow the courses technique
+       setCoins(data);
+       setLoading(false);
+   }
 
    useEffect(()=>{
     fetchCoins();
