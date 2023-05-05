@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { CryptoState } from '../CryptoContext';
 import axios from 'axios';
 import { HistoricalChart } from '../config/API';
-import { CircularProgress, ThemeProvider, createTheme } from '@mui/material';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { CircularProgress } from '@mui/material';
 import { chartDays } from "../config/data";
 import SelectButton from './SelectButton';
 import { Line } from 'react-chartjs-2';

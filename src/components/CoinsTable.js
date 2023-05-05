@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CryptoState } from '../CryptoContext';
-import { Container, LinearProgress,Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography, createTheme } from '@mui/material';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Container, LinearProgress,Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { numberWithCommas } from './Banner/Carousel';
 

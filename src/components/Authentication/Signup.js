@@ -1,6 +1,8 @@
 import { Box, Button, TextField } from '@mui/material';
 import React, { useState } from 'react'
 import { CryptoState } from '../../CryptoContext';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../../Pages/firebase";
 
 const Signup = ({handleClose}) => {
  const [email, setEmail] = useState("");
@@ -8,7 +10,7 @@ const Signup = ({handleClose}) => {
  const [confirmPassword, setConfirmPassword] = useState(""); 
 
  const {setAlert} = CryptoState();
- const handleSubmit =()=>{
+ const handleSubmit = async ()=>{
     if(password !== confirmPassword){
         setAlert({
             open:true,
@@ -16,6 +18,27 @@ const Signup = ({handleClose}) => {
             type:'error'
         });
         return;
+    }
+
+    try {
+      const result = await createUserWithEmailAndPassword(
+         auth,
+         email,
+         password);
+         console.log(result);
+         setAlert({
+            open: true,
+            message: `Sign Up Successful, Welcome ${result.user.email}`,
+            type:"success"
+         });
+         handleClose();
+    } catch (error){
+       setAlert({
+         open:true,
+         message: error.message,
+         type:"error"
+       });
+       return;
     }
  }
   
@@ -63,3 +86,13 @@ const Signup = ({handleClose}) => {
 }
 
 export default Signup;
+
+// import React from 'react'
+
+// function Signup() {
+//   return (
+//     <div>Signup</div>
+//   )
+// }
+
+// export default Signup

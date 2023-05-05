@@ -6,9 +6,6 @@ import MuiAlert from '@mui/material/Alert';
 const Alert = () => {
   const {alert,setAlert} = CryptoState();
 
-  console.log("In firebase branch");
-
-
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;

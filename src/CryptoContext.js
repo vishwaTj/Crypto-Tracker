@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
 import { createContext } from 'react';
 import { CoinList } from './config/API';
+import { onAuthStateChanged } from 'firebase/auth';
+import {auth} from "./Pages/firebase";
 
 const Crypto = createContext();
 
@@ -27,6 +29,13 @@ const CryptoContext = ({children}) => {
     setLoading(false);
 }
 
+  useEffect(()=>{
+    onAuthStateChanged(auth,user=>{
+      if(user) setUser(user);
+      else setUser(null);
+    })
+  },[])
+
 
   useEffect(()=>{
     if(currency === "INR") setSymbol("₹")
@@ -34,7 +43,18 @@ const CryptoContext = ({children}) => {
   },[currency])
 
   return (
-    <Crypto.Provider value={{currency, symbol, setCurrency, coins, loading, fetchCoins, alert, setAlert}}>
+    <Crypto.Provider 
+        value={{currency,
+               symbol,
+               setCurrency,
+               coins,
+               loading,
+               fetchCoins,
+               alert,
+               setAlert,
+               user
+              }}
+            >
       {children}
     </Crypto.Provider>
   )
