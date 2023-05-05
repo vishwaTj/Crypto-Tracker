@@ -6,6 +6,10 @@ import { CryptoState } from '../../CryptoContext';
 import { Avatar } from '@mui/material';
 import { signOut } from 'firebase/auth';
 import {auth} from "../../Pages/firebase";
+import { numberWithCommas } from '../Banner/Carousel';
+import {AiFillDelete} from 'react-icons/ai';
+import { doc,setDoc } from 'firebase/firestore';
+import { db } from "../../Pages/firebase";
 // import List from '@mui/material/List';
 // import Divider from '@mui/material/Divider';
 // import ListItem from '@mui/material/ListItem';
@@ -20,7 +24,7 @@ export default function UserSidebar() {
     right: false,
   });
 
-  const { user,setAlert } = CryptoState();
+  const { user,setAlert, watchList, coins, symbol } = CryptoState();
 
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -41,6 +45,32 @@ export default function UserSidebar() {
     });
     toggleDrawer();
   };
+
+  const removeFromWatchLict = async (coin)=>{
+    const coinRef = doc(db, "watchlist", user.uid);
+    console.log("I got called");
+    
+    try{
+     await setDoc( 
+       coinRef,
+       { coins: watchList.filter((watch) => watch !== coin?.id)},
+       {merge:"true"}
+       );
+
+     setAlert({
+       open:true,
+       message:`${coin.name} Removed to watchlist !`,
+       type:"success",  
+     })
+    }catch(error){
+     console.log(error);
+      setAlert({
+       open:true,
+       message:error.mesasge,
+       type:"error"
+      });
+    }
+ }
 
   const info={
     width:350,
@@ -71,7 +101,7 @@ export default function UserSidebar() {
     backgroundColor:"#EEBC1D",
     marginTop:20
   }
-  const watchList={
+  const CoinList={
     flex:1,
     width:"100%",
     backgroundColor:"grey",
@@ -83,6 +113,18 @@ export default function UserSidebar() {
     alignItems:"center",
     gap:12,
     overflowY:"scroll"
+  }
+
+  const coinData={
+     padding: 10,
+     borderRadius:5,
+     color:"black",
+     width:"100%",
+     display:"flex",
+     justifyContent: "space-between",
+     alignItems: "center",
+     backgroundColor: "#EEBC1D",
+     boxShadow:"0 0 3px black"
   }
 
  
@@ -127,12 +169,31 @@ export default function UserSidebar() {
                     {user.displayName || user.email}
 
                   </span>
-                  <div style={watchList}>
+                  <div style={CoinList}>
                     <span style={{ 
                         fontSize:15,
                         textShadow:"0 0 5px black"}}>
                        WatchList
                     </span>
+
+                    {coins.map((coin) =>{
+                        if(watchList.includes(coin.id))
+                        return (
+                            <div style={coinData}>
+                                <span>{coin.name}</span>
+                                <span style={{display:"flex", gap:8}}>
+                                    {symbol}
+                                    {numberWithCommas(coin.current_price.toFixed(2))}
+                                    <AiFillDelete
+                                      style={{ cursor:"pointer"}}
+                                      fontSize='16'
+                                      onClick={()=> removeFromWatchLict(coin)}
+
+                                    />
+                                </span>
+                            </div>
+                        )
+                    })}
                   </div>
                </div>
                <Button

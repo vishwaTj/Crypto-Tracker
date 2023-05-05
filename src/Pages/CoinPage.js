@@ -81,7 +81,7 @@ const CoinPage = () => {
 
      setAlert({
        open:true,
-       message:`${coin.name} Added to watchlist !`,
+       message:`${coin.name} Removed to watchlist !`,
        type:"success",  
      })
     }catch(error){
