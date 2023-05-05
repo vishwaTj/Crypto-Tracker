@@ -28,8 +28,30 @@ export default function UserSidebar() {
     setState({ ...state, [anchor]: open });
   };
 
-  
+  const info={
+    width:350,
+    padding:25,
+    height:"100%",
+    flexDirection: "column",
+    fontFamily:"monospace"
+  }
 
+  const profile={
+     flex:1,
+     display:"flex",
+     flexDirection:"column",
+     alignItems: "center",
+     gap:"20px",
+     height:"92%"
+  };
+  const picture={
+    width:200,
+    height:200,
+    cursor:"pointer",
+    backgroundColor: "#EEBC1D",
+    objectFit:"contain"
+  };
+ 
   return (
     <div>
       {['right'].map((anchor) => (
@@ -51,7 +73,27 @@ export default function UserSidebar() {
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
           >
-            Yonji
+            <div style={info}>
+               <div style={profile}>
+                  <Avatar
+                    style={picture}
+                     src={user.photoURL}
+                     alt={user.displayName || user.email}
+                  />
+                  <span
+                      style={{
+                        width:"100%",
+                        fontSize:25,
+                        textAlign:"center",
+                        fontWeight:"bolder",
+                        wordWrap:"reak-word"
+                      }}
+                  >
+                    {user.displayName || user.email}
+
+                  </span>
+               </div>
+            </div>
           </Drawer>
         </React.Fragment>
       ))}
