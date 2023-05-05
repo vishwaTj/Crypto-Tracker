@@ -39,7 +39,6 @@ const CoinInfo = ({coin}) => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   },[currency,days]);
 
-  console.log(historicalData);
   
 
   const darkTheme = createTheme({
@@ -59,8 +58,7 @@ const CoinInfo = ({coin}) => {
           : `${date.getHours()}:${date.getMinutes()} AM`;
     return time;      
         }      
-          );
-   console.log(newArray);       
+          );  
   const data ={
     labels: newArray,
     datasets: [{

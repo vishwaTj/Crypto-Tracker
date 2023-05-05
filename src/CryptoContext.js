@@ -1,9 +1,10 @@
 import axios from 'axios';
+import {doc, onSnapshot} from "firebase/firestore";
 import React, { useContext, useEffect, useState } from 'react';
 import { createContext } from 'react';
 import { CoinList } from './config/API';
 import { onAuthStateChanged } from 'firebase/auth';
-import {auth} from "./Pages/firebase";
+import {auth, db} from "./Pages/firebase";
 
 const Crypto = createContext();
 
@@ -19,7 +20,25 @@ const CryptoContext = ({children}) => {
     message:"",
     type:"success"
   })
+  const [watchList, setWatchList] = useState([]);
 
+  useEffect(()=>{
+    if(user){
+      const coinRef = doc(db,"watchlist",user?.uid);
+
+      var unsubcribe = onSnapshot(coinRef,(coin) => {
+        if(coin.exists()){
+          console.log(coin.data().coins);
+          setWatchList(coin.data().coins);
+        }else{
+          console.log("No Items in Watchlist");
+        }
+      });
+      return () => {
+        unsubcribe();
+      }
+    }
+  },[user]);
 
   const fetchCoins = async () => {
     setLoading(true);
@@ -52,7 +71,8 @@ const CryptoContext = ({children}) => {
                fetchCoins,
                alert,
                setAlert,
-               user
+               user,
+               watchList
               }}
             >
       {children}
