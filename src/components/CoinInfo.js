@@ -50,32 +50,32 @@ const CoinInfo = ({coin}) => {
     }
   })
 
-  const newArray = historicalData?.map((coin)=> {
-    let date = new Date(coin[0]);
-    let time = 
-          date.getHours() > 12
-          ? `${date.getHours() - 12}:${date.getMinutes()} PM`
-          : `${date.getHours()}:${date.getMinutes()} AM`;
-    return time;      
-        }      
-          );  
-  const data ={
-    labels: newArray,
-    datasets: [{
-      labels: 'Sales of the Week',
-      data: historicalData,
-      backgroundColor: 'aqua',
-      borderColor: 'gold',
-      pointBorderColor:'black',
-      fill: true
-    }]
-  }
+  // const newArray = historicalData?.map((coin)=> {
+  //   let date = new Date(coin[0]);
+  //   let time = 
+  //         date.getHours() > 12
+  //         ? `${date.getHours() - 12}:${date.getMinutes()} PM`
+  //         : `${date.getHours()}:${date.getMinutes()} AM`;
+  //   return time;      
+  //       }      
+  //         );  
+  // const data ={
+  //   labels: newArray,
+  //   datasets: [{
+  //     labels: 'Sales of the Week',
+  //     data: historicalData,
+  //     backgroundColor: 'aqua',
+  //     borderColor: 'gold',
+  //     pointBorderColor:'black',
+  //     fill: true
+  //   }]
+  // }
 
-  const options={
-    plugins: {
-      legend:true
-    }
-  }
+  // const options={
+  //   plugins: {
+  //     legend:true
+  //   }
+  // }
 
   return (
     <ThemeProvider theme={darkTheme}>

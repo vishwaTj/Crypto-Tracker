@@ -5,7 +5,7 @@ import Carousel from './Carousel';
 const Banner = () => {
 
     const banner={
-        backgroundImage: "url(./banner2.jpg)",
+        backgroundImage: "url(./falling_coin.jpg)",
         height:"400px"
     }
     const bannerContent={
@@ -13,7 +13,8 @@ const Banner = () => {
         display: "flex",
         flexDirection: "column",
         paddingTop: "25px",
-        justifyContent: "space-around"
+        justifyContent: "space-around",
+        color:"black"
     }
     const Tagline={
          display:"flex",

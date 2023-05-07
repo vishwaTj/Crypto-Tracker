@@ -176,10 +176,10 @@ export default function UserSidebar() {
                        WatchList
                     </span>
 
-                    {coins.map((coin) =>{
+                    {coins.map((coin,index) =>{
                         if(watchList.includes(coin.id))
                         return (
-                            <div style={coinData}>
+                            <div key={index} style={coinData}>
                                 <span>{coin.name}</span>
                                 <span style={{display:"flex", gap:8}}>
                                     {symbol}

@@ -20,9 +20,9 @@ const Header = () => {
     const darkTheme = createTheme({
         palette:{
             primary:{
-                main: '#fff',
+                main: '#0052cc',
             },
-            type:"dark",
+            // type:"dark",
         },
     })
 
@@ -37,7 +37,9 @@ const Header = () => {
                     style={{
                         width:100,
                         height:40,
-                        marginRight:15
+                        marginRight:15,
+                        color:"white",
+                        border:"1px solid white"
                     }}
                      value={currency}
                      onChange={(e) => setCurrency(e.target.value)}

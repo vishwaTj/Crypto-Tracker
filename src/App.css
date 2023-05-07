@@ -10,7 +10,7 @@
 
 a{
     text-decoration: none;
-    color: gold;
+    color: white;
 }
 
 .MainPage{
@@ -23,9 +23,6 @@ a{
 
  /* styles for the banner component */
 
-.banner{
-    background-image: "url(./coinBack.jpg)";
-}
 
 .bannerContent{
     height: 400;
@@ -55,29 +52,33 @@ a{
     padding:20;
     width:100%;
     display:flex;
+    margin-top: 10px;
+    border-radius: 10px;
     justify-content:center;
-    color: gold;
+    background-color: gold;
 }
 
  /* CoinPage styling */
 
 .CoinContianer{
     display: flex;
-    margin: 10px;
+    width: 100vw;
+    height: auto;
 }
 
-@media only screen and (max-width:768px) {
+/* @media only screen and (max-width:768px) {
     .CoinContianer {
         flex-direction:column;
         align-items: center;
     }
- }
+ } */
 
 .sideBar{
     width: 30%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     margin-top: 25;
     border-right: 2px solid grey;
 }

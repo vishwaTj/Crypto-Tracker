@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { CryptoState } from '../CryptoContext';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Container, LinearProgress,Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography} from '@mui/material';
+import { Container, LinearProgress,Pagination, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Typography} from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { numberWithCommas } from './Banner/Carousel';
 
@@ -37,6 +37,15 @@ const CoinsTable = () => {
         );
    }
 
+//    const styles = theme => ({
+//     textField: {
+//         width:"100%",
+//         color:"white"
+//     },
+//     input: {
+//       color: 'white'
+//   }
+// });
 
 
   return (
@@ -49,12 +58,16 @@ const CoinsTable = () => {
                >
                 CryptoCurrency by Market Cap
                </Typography>
-               <TextField
+               {/* <TextField
+                 className={{backgroundColor:"white"}}               
                  label="Search For a Crypto currency.."
                  variant='outlined'
-                 style={{marginBottom:20, width:"100%", border:"1px solid white", borderRadius:"5px", color:"white"}}
                  onChange={(e) => setSearch(e.target.value)}
-               />
+               /> */}
+               
+                <div>
+                  <input type='text' style={{backgroundColor:"white", color:"black", borderRadius:"10px", width:"100%", height:"40px",padding:"4px",marginBottom:"20px"}} onChange={(e) => setSearch(e.target.value)} placeholder='Search for a coin'/>
+                </div>
                <TableContainer>
                   {/* iddhar progress mein apna sketch laga de */}
                   {loading ? (
@@ -80,7 +93,6 @@ const CoinsTable = () => {
                             </TableHead>
                             <TableBody>
                                  {handleSearch()
-                                     //Pgination technique used read once again
                                       .slice((page - 1) * 10, (page - 1) * 10 + 10)
                                       .map((row) => {
                                     const profit = row.price_change_percentage_24h > 0;
