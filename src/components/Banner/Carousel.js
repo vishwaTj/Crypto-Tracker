@@ -25,7 +25,7 @@ const Carousel = () => {
     alignItems: "center",
     cursor: "pointer",
     textTransform: "uppercase",
-    color: "white",
+    color: "black",
    }
 
    const { currency, symbol } =  CryptoState();
