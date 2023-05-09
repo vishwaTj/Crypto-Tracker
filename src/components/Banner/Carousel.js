@@ -28,6 +28,7 @@ const Carousel = () => {
     color: "black",
    }
 
+   
    const { currency, symbol } =  CryptoState();
 
    const FetchTrendingCoins = async () =>{
